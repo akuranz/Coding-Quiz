@@ -10,6 +10,11 @@ var answers = document.querySelector("#answers");
 var ansEval = document.querySelector("#evaluate-answer");
 var timer = document.querySelector("#timer");
 
+var bell = new Audio();
+bell.src = "./assets/Ting-Popup_Pixels-349896185.mp3";
+var buzzer = new Audio();
+buzzer.src = "./assets/Buzzer-SoundBible.com-188422102.mp3";
+
 var questions = [
   {
     title: "Commonly used data types DO NOT include:",
@@ -95,10 +100,12 @@ function startTimer() {
     timer.textContent = "Time: " + timeLeft;
     if (timeLeft === 0) {
       timer.textContent = "Time's up!";
+      timer.setAttribute("class", "timer");
       clearInterval(timeInterval);
     }
     if (currentQuestionIndex === 5) {
       timer.textContent = "Great work!";
+      timer.setAttribute("class", "timer");
       clearInterval(timeInterval);
     }
   }, 1000);
@@ -130,10 +137,13 @@ function checkAnswer(event) {
   } else timeLeft -= 15;
   if (userAnswer === correctAnswer) {
     ansEval.textContent = "Correct Answer!";
+    bell.play();
   } else {
     ansEval.textContent = "Wrong Answer!";
+    buzzer.play();
   }
   nextQuestion();
+
 }
 
 //has to be after check answer

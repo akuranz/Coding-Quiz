@@ -8,6 +8,7 @@ var enterInitials = document.querySelector("#enter-initials");
 var submitInitials = document.querySelector("#submit-initials");
 var answers = document.querySelector("#answers");
 var ansEval = document.querySelector("#evaluate-answer");
+var ansEvalFinal = document.querySelector("#evaluate-answer-final");
 var timer = document.querySelector("#timer");
 
 var bell = new Audio();
@@ -72,7 +73,7 @@ submitInitials.addEventListener("click", function(event) {
   var newScores = {
     initials,
     score
-  }
+  };
   highscores.push(newScores);
   localStorage.setItem("highscores", JSON.stringify(highscores));
 
@@ -81,12 +82,11 @@ submitInitials.addEventListener("click", function(event) {
   window.location.href = "HighScores.html";
 });
 
-
 //FUNCTIONS
 
-function Start(){
+function Start() {
   currentQuestionIndex = 0;
-  console.log(highscores)
+  console.log(highscores);
 
   startContainer.setAttribute("style", "display: none");
   questionContainer.setAttribute("style", "display: block");
@@ -98,20 +98,41 @@ function startTimer() {
   var timeInterval = setInterval(function() {
     timeLeft--;
     localStorage.setItem("timer", timeLeft);
-    timer.innerHTML = "Time: " + timeLeft;
+    timer.innerHTML = "|  Time: " + timeLeft;
+    var icon = document.createElement("i");
+    icon.setAttribute("class", "fas fa-hourglass-start fa-spin");
+    timer.prepend(icon);
     if (timeLeft === 0) {
-      timer.textContent = "Time's up!";
-      // timer.setAttribute("class", "timer fas fa-hourglass-end");
+      timer.textContent = "|  Time's up!";
+      timer.style.backgroundColor = "red";
+      timer.style.borderColor = "red";
+      timer.style.color = "#ffffff";
+      icon.setAttribute("class", "fas fa-hourglass-end");
+      timer.prepend(icon);
       clearInterval(timeInterval);
     }
     if (currentQuestionIndex === 5) {
-      timer.textContent = "Great work!";
+      timer.textContent = "|  Great work!";
+      timer.style.backgroundColor = "green";
+      timer.style.borderColor = "green";
+      timer.style.color = "#ffffff";
+      icon.setAttribute("class", "fas fa-hourglass-end");
+      timer.prepend(icon);
+      timer.setAttribute("class", "timer");
+      clearInterval(timeInterval);
+    }
+    if (score <= 0 && currentQuestionIndex === 5) {
+      timer.textContent = "|  Try again to rank higher!";
+      timer.style.backgroundColor = "red";
+      timer.style.borderColor = "red";
+      timer.style.color = "#ffffff";
+      icon.setAttribute("class", "fas fa-hourglass-end");
+      timer.prepend(icon);
       timer.setAttribute("class", "timer");
       clearInterval(timeInterval);
     }
   }, 1000);
 }
-
 
 //Render the first question from array
 function renderQuestion() {
@@ -138,13 +159,22 @@ function checkAnswer(event) {
   } else timeLeft -= 15;
   if (userAnswer === correctAnswer) {
     ansEval.textContent = "Correct Answer!";
+    console.log("Correct", ansEval);
     bell.play();
   } else {
     ansEval.textContent = "Wrong Answer!";
+    console.log("Wrong", ansEval);
     buzzer.play();
   }
-  nextQuestion();
+  if (userAnswer === correctAnswer && currentQuestionIndex === 4) {
+    ansEvalFinal.textContent = "Correct Answer!";
+    console.log("Correct", ansEvalFinal);
+  } else {
+    ansEvalFinal.textContent = "Wrong Answer!";
+    console.log("Wrong", ansEvalFinal);
+  }
 
+  nextQuestion();
 }
 
 //has to be after check answer
@@ -165,7 +195,8 @@ function finalScorePage(event) {
   if (event.target.matches("button") && currentQuestionIndex === 5) {
     questionContainer.setAttribute("style", "display: none");
     scoreContainer.setAttribute("style", "display: block");
-    finalScore.textContent = "Your final score is " + (score += timeLeft) + " !";
+    finalScore.textContent =
+      "Your final score is " + (score += timeLeft) + " !";
     finalScore.setAttribute("class", "score");
   }
   console.log("finalscorepage");

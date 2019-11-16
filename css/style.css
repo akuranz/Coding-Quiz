@@ -41,6 +41,11 @@ h2 {
     text-align: center;
 }
 
+i {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 
 #answers {
     margin-top: 25px;
@@ -56,11 +61,6 @@ h3 {
     
 }
 
-/* #submissionLabel {
-    background-color:#fff;
-    box-shadow: 5px 5px 3px #777;
-    /* border: 3px solid #17a2b8; */
-/* } */ 
 
 h4 {
     color: #17a2b8;
@@ -90,7 +90,7 @@ ol {
 }
 
 li {
-    border: 1px solid #17a2b8;
+    border: 2px solid #17a2b8;
 }
 
 
@@ -98,8 +98,7 @@ li {
     color: #17a2b8;
     font-size: 34px;
     font-weight: bolder;
-    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-    text-align: left;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;;
     text-align: center;
     background-color: #fff;
     box-shadow: 5px 5px 3px #777;
@@ -107,6 +106,7 @@ li {
     padding-left: 15px;
     padding-right: 15px;
 }
+
 
 .container {
     flex: 1;
@@ -162,10 +162,47 @@ li {
 }
 
 #enter-initials {
-    border: 2px solid #e4e4e4;
+    border: 2px solid #17a2b8;
     width: 100%;
+    height: 70%;
     /* box-shadow: 5px 5px 3px #777; */
 }
+
+#final-score {
+    color: #fff;
+    font-size: 34px;
+    font-weight: bolder;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    text-align: center;
+    background-color: #ffc107;
+    box-shadow: 5px 5px 3px #777;
+    border: 3px solid #fff;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: inline;
+}
+
+#highscores-header {
+    color: #fff;
+    font-size: 34px;
+    font-weight: bolder;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    text-align: center;
+    background-color: #ffc107;
+    box-shadow: 5px 5px 3px #777;
+    border: 3px solid #fff;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/* #submissionLabel {
+    background-color:#fff;
+    /* box-shadow: 5px 5px 3px #777; */
+    /* border-right: 3px solid #17a2b8;
+}  */ 
+
+
 
 footer{
     height: 60px;

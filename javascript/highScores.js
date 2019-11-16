@@ -26,11 +26,7 @@ function renderHighScores() {
     console.log(highscores[i].score);
     var li = document.createElement("li");
     li.innerHTML =
-      "<h4>" +
-      highscores[i].initials +
-      " " +
-      highscores[i].score +
-      "</h4>";
+      "<h4>" + highscores[i].initials + " " + highscores[i].score + "</h4>";
     highScoresList.append(li);
   }
 }

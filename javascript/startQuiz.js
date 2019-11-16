@@ -69,7 +69,6 @@ finalAnswer.addEventListener("click", finalScorePage);
 submitInitials.addEventListener("click", function(event) {
   event.preventDefault();
   var initials = enterInitials.value;
-  // initials.style.textTransform = "uppercase";
   var newScores = {
     initials,
     score
@@ -159,19 +158,31 @@ function checkAnswer(event) {
   } else timeLeft -= 15;
   if (userAnswer === correctAnswer) {
     ansEval.textContent = "Correct Answer!";
+    setTimeout(function() {
+      ansEval.textContent = "";
+    }, 3000);
     console.log("Correct", ansEval);
     bell.play();
   } else {
     ansEval.textContent = "Wrong Answer!";
     console.log("Wrong", ansEval);
+    setTimeout(function() {
+      ansEval.textContent = "";
+    }, 3000);
     buzzer.play();
   }
   if (userAnswer === correctAnswer && currentQuestionIndex === 4) {
     ansEvalFinal.textContent = "Correct Answer!";
     console.log("Correct", ansEvalFinal);
+    setTimeout(function() {
+      ansEvalFinal.textContent = "";
+    }, 3000);
   } else {
     ansEvalFinal.textContent = "Wrong Answer!";
     console.log("Wrong", ansEvalFinal);
+    setTimeout(function() {
+      ansEvalFinal.textContent = "";
+    }, 3000);
   }
 
   nextQuestion();

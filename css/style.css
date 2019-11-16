@@ -82,17 +82,21 @@ h4 {
 
 ol {
     color: #17a2b8;
+    border: 3px solid #e4e4e4;
     font-size: 34px;
     font-weight: bolder;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-    padding: 15px;
     text-align: right;
+    padding-left: 75px;
 }
 
 li {
-    border: 2px solid #17a2b8;
+    border-bottom: 2px solid #e4e4e4;
 }
 
+li:last-child{
+    border-bottom: none;
+}
 
 .timer {
     color: #17a2b8;
@@ -156,16 +160,20 @@ li {
     box-shadow: 5px 5px 3px #777;
 }
 
+.btn-group-vertical >button:focus {
+    border:none;
+}
+
 #instructions {
     border: 3px solid #e4e4e4;
     /* box-shadow: 5px 5px 3px #777; */
 }
 
 #enter-initials {
-    border: 2px solid #17a2b8;
+    border: none;
     width: 100%;
     height: 70%;
-    /* box-shadow: 5px 5px 3px #777; */
+    padding-left: 15px;
 }
 
 #final-score {
@@ -193,6 +201,20 @@ li {
     border: 3px solid #fff;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+#submit-highscores {
+    color: #17a2b8;
+    font-size: 34px;
+    font-weight: bolder;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 5px 5px 3px #777;
+    border: 3px solid #17a2b8;
+    padding-left: 15px;
+    padding-right: 15px;
+
 }
 
 

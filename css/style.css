@@ -1,5 +1,5 @@
 body{
-    color: #777;
+    color: #63666a;
     height: 100%;
     line-height: 2;
     background-color: #fff;
@@ -9,24 +9,103 @@ body{
     flex-direction: column;
     margin: auto;
     text-align: center;
+    flex-direction: column;
+}
+
+.bg-teal {
+    background-color:#17a2b8;
+    box-shadow: 5px 5px 3px #777;
+    border: 3px solid #fff;
+}
+
+p {
+    font-size: 16px;
 }
 
 h1 {
-    color: #777;
+    color: #fff;
     font-size: 34px;
     font-weight: bolder;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
     padding: 15px;
+    text-align: center;
     
 }
 
+h2 {
+    color: #63666a;
+    font-size: 34px;
+    font-weight: bolder;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    padding: 15px;
+    text-align: center;
+}
+
+
+#answers {
+    margin-top: 25px;
+}
+
+h3 {
+    color: #17a2b8;
+    font-size: 34px;
+    font-weight: bolder;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    padding: 15px;
+    text-align: right;
+    
+}
+
+/* #submissionLabel {
+    background-color:#fff;
+    box-shadow: 5px 5px 3px #777;
+    /* border: 3px solid #17a2b8; */
+/* } */ 
+
+h4 {
+    color: #17a2b8;
+    font-size: 34px;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    padding: 15px;
+    text-align: left;
+    text-transform: uppercase;
+    
+}
+
+.score {
+    color: #17a2b8;
+    font-size: 34px;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    text-align: center;
+}
+
+
+ol {
+    color: #17a2b8;
+    font-size: 34px;
+    font-weight: bolder;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    padding: 15px;
+    text-align: right;
+}
+
+li {
+    border: 1px solid #17a2b8;
+}
+
+
 .timer {
-    color: #777;
-    font-size: 24px;
+    color: #17a2b8;
+    font-size: 34px;
     font-weight: bolder;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
     text-align: left;
     text-align: center;
+    background-color: #fff;
+    box-shadow: 5px 5px 3px #777;
+    border: 3px solid #17a2b8;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .container {
@@ -55,6 +134,8 @@ h1 {
     color: #fff;
     border: none;
     border-radius: 50px;
+    border: 3px solid #fff;
+    box-shadow: 5px 5px 3px #777;
     font-size: 20px;
     font-weight: bolder;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
@@ -63,5 +144,35 @@ h1 {
 
 .btn-group-vertical >button{
     margin-bottom:10px;
-    border-radius:5px !important;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 50px !important;
+    border-style: solid;
+    border-color: #fff;
+    background-color: #17a2b8;
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: #fff;
+    box-shadow: 5px 5px 3px #777;
 }
+
+#instructions {
+    border: 3px solid #e4e4e4;
+    /* box-shadow: 5px 5px 3px #777; */
+}
+
+#enter-initials {
+    border: 2px solid #e4e4e4;
+    width: 100%;
+    /* box-shadow: 5px 5px 3px #777; */
+}
+
+footer{
+    height: 60px;
+    line-height: 60px;
+    background-color: #fff;
+    border-top: 3px solid #17a2b8;
+    font-size: 10px;
+    color: #fff;
+}
+

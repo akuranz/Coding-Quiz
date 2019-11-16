@@ -26,11 +26,11 @@ function renderHighScores() {
     console.log(highscores[i].score);
     var li = document.createElement("li");
     li.innerHTML =
-      "<h2> INITIALS: " +
+      "<h4>" +
       highscores[i].initials +
-      " | SCORE: " +
+      " " +
       highscores[i].score +
-      "</h2>";
+      "</h4>";
     highScoresList.append(li);
   }
 }

@@ -68,6 +68,7 @@ finalAnswer.addEventListener("click", finalScorePage);
 submitInitials.addEventListener("click", function(event) {
   event.preventDefault();
   var initials = enterInitials.value;
+  // initials.style.textTransform = "uppercase";
   var newScores = {
     initials,
     score
@@ -97,10 +98,10 @@ function startTimer() {
   var timeInterval = setInterval(function() {
     timeLeft--;
     localStorage.setItem("timer", timeLeft);
-    timer.textContent = "Time: " + timeLeft;
+    timer.innerHTML = "Time: " + timeLeft;
     if (timeLeft === 0) {
       timer.textContent = "Time's up!";
-      timer.setAttribute("class", "timer");
+      // timer.setAttribute("class", "timer fas fa-hourglass-end");
       clearInterval(timeInterval);
     }
     if (currentQuestionIndex === 5) {
@@ -115,10 +116,10 @@ function startTimer() {
 //Render the first question from array
 function renderQuestion() {
   document.querySelector("#question-title").innerHTML = q.title;
-  document.getElementById("0").innerHTML = "1 " + q.choices[0];
-  document.getElementById("1").innerHTML = "2 " + q.choices[1];
-  document.getElementById("2").innerHTML = "3 " + q.choices[2];
-  document.getElementById("3").innerHTML = "4 " + q.choices[3];
+  document.getElementById("0").innerHTML = "1. " + q.choices[0];
+  document.getElementById("1").innerHTML = "2. " + q.choices[1];
+  document.getElementById("2").innerHTML = "3. " + q.choices[2];
+  document.getElementById("3").innerHTML = "4. " + q.choices[3];
 }
 
 //Check the index of the choice linked to button against answer in array
@@ -164,7 +165,8 @@ function finalScorePage(event) {
   if (event.target.matches("button") && currentQuestionIndex === 5) {
     questionContainer.setAttribute("style", "display: none");
     scoreContainer.setAttribute("style", "display: block");
-    finalScore.textContent = "Your final score is " + (score += timeLeft);
+    finalScore.textContent = "Your final score is " + (score += timeLeft) + " !";
+    finalScore.setAttribute("class", "score");
   }
   console.log("finalscorepage");
 }

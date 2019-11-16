@@ -17,20 +17,15 @@
 
 
   <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-0 px-3" role="navigation"> 
+        <nav class="navbar navbar-light bg-white py-0 px-3 mb-4" role="navigation"> 
                 <a class="navbar-brand bg-teal" href="highscores.html"><h1>View Highscores</h1></a>
-                
-                <button class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <div class="timer" id="timer"></div>
-            </div>
+                    <div class="row-fluid d-flex flex-row justify-content-end" id="navbarSupportedContent">
+                    </div>
+                </nav>
             </nav>
-        <div class="container">
-            <h1>High Scores</h1>
-           
-            <div id="high-scores">
+        <div class="container highscores">
+                <h2>Highscores</h2>
+            <div class="mx-5" id="high-scores">
                 <ol id="high-scores-list">
                 </ol>
             </div>
@@ -46,6 +41,13 @@
                     </div>
                 </div>
         </div>
+
+         <!--Footer Content-->
+         <footer class="footer mt-5">
+                <div class="container text-center">
+                    <span class="text-muted">Copyright &copy;</span>
+                </div>
+            </footer>
 
     <script type="text/javascript" src="javascript/highScores.js"></script>
     <!-- <script type="text/javascript" src="javascript/startQuiz.js"></script> -->

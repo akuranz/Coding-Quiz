@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Font Awesome Script -->
+    <script src="https://kit.fontawesome.com/c875ce7059.js" crossorigin="anonymous"></script>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -17,30 +20,30 @@
 
 
   <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-0 px-3" role="navigation"> 
+        <nav class="navbar navbar-light bg-white py-0 px-3 mb-4" role="navigation"> 
             <a class="navbar-brand bg-teal" href="highscores.html"><h1>View Highscores</h1></a>
-            
-            <!-- <button class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <div id="timer"><h1>Timer: 75 Seconds</h1></div>
+                <div class="row-fluid d-flex flex-row justify-content-end" id="navbarSupportedContent">
+                    <div class="timer px-4" id="timer"><h3><i class="fas fa-hourglass-start"></i> Timer: 0</h3></div>
             </div>
             </nav>
+        </nav>
         <div class="container" id="start-container" style="display: block;">
             <div class = "row">
                 <div class = "col-md">
-                    <h1>Coding Quiz Challenge</h1>
+                    <h2>Coding Quiz Challenge</h2>
                 </div>
             </div>      
             <div class = "row">
-                <div class = "col-md">
-                    <p>Click "Start Your Quiz" to begin. </p>
+                <div id="instructions" class = "col-md wrap-text m-4 py-3">
+                    <p>> Click "Start Your Quiz" to begin. You will have 75 seconds to answer five multiple choice quesitons about coding.<br/>
+                       > For each quesiton answered correctly, you will be awarded 10 points.<br/>> For each question answered incorrecly, 15 seconds will be subtracted from your remaining time. <br/>
+                       > You will also be rewarded one point for each remaining second, once the quiz is complete.<br/>> Enter your intials to log your final score on the highscores page. <br/>
+                    > Click "Go Back" to take the quiz again and improve your score!</p>
                 </div>
             </div>
             <div class = "row">
                 <div class = "col-md" id="firstQuestion">
-                    <input type="button" value="Start Your Quiz!" id="startQuiz" class="btn btn-info">
+                    <input type="button" value="Start Your Quiz! >>" id="startQuiz" class="btn btn-info btn-lg">
                 </div>
             </div>
         </div>
@@ -49,10 +52,10 @@
                 <div class = "col-md">
                     <h2 id="question-title"></h2>
             <div id="answers" class="btn-group-vertical">
-                <button value="0" id="0"></button>
-                <button value="1" id="1"></button>
-                <button value="2" id="2"></button>
-                <button value="3" id="3"></button>
+                <button id="0"></button>
+                <button id="1"></button>
+                <button id="2"></button>
+                <button id="3"></button>
             </div>
             <div id="evaluate-answer">
             </div>
@@ -65,28 +68,29 @@
                     <h1>All done!</h1>
                 </div>
             </div> 
-            <div class = "row">
+            <div class = "row justify-content-center">
                 <div class = "col-md" id="final-score">
                 </div>
             </div> 
             <div class = "row">
                 <div class = "col-md">
-                    <h2>Enter initials:</h2>
+                    <h3 id="submissionLabel">Enter initials:</h3>
                 </div>
                 <div class = "col-md">
-                    <input type="text" id="enter-initials">
+                    <input type="text" style="text-transform: uppercase" class="mt-4" id="enter-initials">
                 </div>
                 <div class = "col-md">
-                    <input type="submit" id="submit-initials" class="btn btn-info">
+                    <input type="submit" id="submit-initials" class="btn btn-info btn-block mt-3">
                 </div>
             </div> 
         </div>
 
-        <!-- <audio>
-            <source src="assets/Ting-Popup_Pixels-349896185.mp3" type="audio/mp3" id="bell">
-            <source src="assets/Buzzer-SoundBible.com-188422102.mp3" type="audio/mp3" id="buzzer">
-            Your browser does not support the audio element.
-          </audio> -->
+         <!--Footer Content-->
+         <footer class="footer mt-5">
+                <div class="container text-center">
+                    <span class="text-muted">Copyright &copy;</span>
+                </div>
+            </footer>
           
 
 

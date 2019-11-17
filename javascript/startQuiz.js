@@ -79,7 +79,7 @@ function startTimer() {
     var icon = document.createElement("i");
     icon.setAttribute("class", "fas fa-hourglass-start fa-spin");
     timer.prepend(icon);
-    if (timeLeft === 0) {
+    if (timeLeft <= 0) {
       timer.textContent = "|  Time's up!";
       timer.style.backgroundColor = "red";
       timer.style.borderColor = "red";
@@ -87,6 +87,11 @@ function startTimer() {
       icon.setAttribute("class", "fas fa-hourglass-end");
       timer.prepend(icon);
       clearInterval(timeInterval);
+      questionContainer.setAttribute("style", "display: none");
+      scoreContainer.setAttribute("style", "display: block");
+      finalScore.textContent =
+        "Your final score is " + (score += timeLeft) + "!";
+      finalScore.setAttribute("class", "score");
     }
     if (currentQuestionIndex === 5) {
       timer.textContent = "|  Great work!";
@@ -209,15 +214,14 @@ function pushScores() {
     initials,
     score
   };
-  highscores.push(newScores);
-  localStorage.setItem("highscores", JSON.stringify(highscores));
-
-  console.log(initials, score);
-  window.location.href = "HighScores.html";
-
-  // if (initials === "") {
-  //   alert("Enter your initials to log highscore!");
-  // } else {
-  //   return;
-  // }
+  if (initials != "" && typeof intials === "string") {
+    highscores.push(newScores);
+    localStorage.setItem("highscores", JSON.stringify(highscores));
+    console.log(initials, score);
+    window.location.href = "HighScores.html";
+  } else {
+    alert(
+      "Enter your initials to log your score! Please do not enter any numbers."
+    );
+  }
 }

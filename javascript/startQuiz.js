@@ -66,20 +66,7 @@ answers.addEventListener("click", checkAnswer);
 
 finalAnswer.addEventListener("click", finalScorePage);
 
-submitInitials.addEventListener("click", function(event) {
-  event.preventDefault();
-  var initials = enterInitials.value;
-  var newScores = {
-    initials,
-    score
-  };
-  highscores.push(newScores);
-  localStorage.setItem("highscores", JSON.stringify(highscores));
-
-  console.log(initials, score);
-
-  window.location.href = "HighScores.html";
-});
+submitInitials.addEventListener("click", pushScores);
 
 //FUNCTIONS
 
@@ -121,7 +108,7 @@ function startTimer() {
       clearInterval(timeInterval);
     }
     if (score <= 0 && currentQuestionIndex === 5) {
-      timer.textContent = "|  Try again to rank higher!";
+      timer.textContent = "|  Submit your score and try again to rank higher!";
       timer.style.backgroundColor = "red";
       timer.style.borderColor = "red";
       timer.style.color = "#ffffff";
@@ -158,6 +145,9 @@ function checkAnswer(event) {
   } else timeLeft -= 15;
   if (userAnswer === correctAnswer) {
     ansEval.textContent = "Correct Answer!";
+    ansEval.style.color = "green";
+    ansEval.style.fontSize = "20px";
+    ansEval.style.fontWeight = "bolder";
     setTimeout(function() {
       ansEval.textContent = "";
     }, 3000);
@@ -165,6 +155,9 @@ function checkAnswer(event) {
     bell.play();
   } else {
     ansEval.textContent = "Wrong Answer!";
+    ansEval.style.color = "red";
+    ansEval.style.fontSize = "20px";
+    ansEval.style.fontWeight = "bolder";
     console.log("Wrong", ansEval);
     setTimeout(function() {
       ansEval.textContent = "";
@@ -173,12 +166,18 @@ function checkAnswer(event) {
   }
   if (userAnswer === correctAnswer && currentQuestionIndex === 4) {
     ansEvalFinal.textContent = "Correct Answer!";
+    ansEvalFinal.style.color = "green";
+    ansEvalFinal.style.fontSize = "20px";
+    ansEvalFinal.style.fontWeight = "bolder";
     console.log("Correct", ansEvalFinal);
     setTimeout(function() {
       ansEvalFinal.textContent = "";
     }, 3000);
   } else {
     ansEvalFinal.textContent = "Wrong Answer!";
+    ansEvalFinal.style.color = "red";
+    ansEvalFinal.style.fontSize = "20px";
+    ansEvalFinal.style.fontWeight = "bolder";
     console.log("Wrong", ansEvalFinal);
     setTimeout(function() {
       ansEvalFinal.textContent = "";
@@ -206,9 +205,28 @@ function finalScorePage(event) {
   if (event.target.matches("button") && currentQuestionIndex === 5) {
     questionContainer.setAttribute("style", "display: none");
     scoreContainer.setAttribute("style", "display: block");
-    finalScore.textContent =
-      "Your final score is " + (score += timeLeft) + " !";
+    finalScore.textContent = "Your final score is " + (score += timeLeft) + "!";
     finalScore.setAttribute("class", "score");
   }
   console.log("finalscorepage");
+}
+
+//push scores to highscores page
+function pushScores() {
+  var initials = enterInitials.value;
+  var newScores = {
+    initials,
+    score
+  };
+  highscores.push(newScores);
+  localStorage.setItem("highscores", JSON.stringify(highscores));
+
+  console.log(initials, score);
+  window.location.href = "HighScores.html";
+
+  // if (initials === "") {
+  //   alert("Enter your initials to log highscore!");
+  // } else {
+  //   return;
+  // }
 }

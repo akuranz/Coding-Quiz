@@ -20,12 +20,11 @@
 
 
   <body>
-        <nav class="navbar navbar-light bg-white py-0 px-3 mb-4" role="navigation"> 
-            <a class="navbar-brand bg-teal" href="highscores.html"><h1>View Highscores</h1></a>
-                <div class="row-fluid d-flex flex-row justify-content-end" id="navbarSupportedContent">
+        <nav class="navbar navbar-light bg-white my-2 justify-content-lg-between justify-content-md-around justify-content-sm-around" role="navigation"> 
+            <a class="navbar-brand bg-teal my-2" href="highscores.html"><h1>View Highscores</h1></a>
+                <div class="row-fluid d-flex flex-row my-2">
                     <div class="timer px-4" id="timer"><h3><i class="fas fa-hourglass-start"></i>|  Timer: 0</h3></div>
-            </div>
-            </nav>
+                </div>
         </nav>
         <div class="container" id="start-container" style="display: block;">
             <div class = "row">
@@ -63,24 +62,24 @@
             </div>      
         </div>
         <div class="container" id="score-container" style="display: none">
-            <!-- <div class = "row">
+            <div class = "row">
                 <div class = "col-md">
                     <h2>All done!</h2>
                 </div>
-            </div>  -->
+            </div> 
             <div class = "row justify-content-center mb-5">
                 <div class = "col-md" id="final-score">
                 </div>
             </div> 
-            <div class = "row" id="submit-highscores" class="pb-3">
+            <div class = "row" id="submit-highscores" class="py-3">
                 <div class = "col-md">
-                    <h3 id="submissionLabel" class="mt-4">Enter initials:</h3>
+                    <h3 id="submissionLabel" class="my-4">Enter initials:</h3>
                 </div>
                 <div class = "col-md">
-                    <input type="text" placeholder="Initials" style="text-transform: uppercase" class="mt-4" id="enter-initials">
+                    <input type="text" placeholder="Enter Initials Here" style="text-transform: uppercase" class="my-4" id="enter-initials">
                 </div>
                 <div class = "col-md">
-                    <input type="submit" id="submit-initials" class="btn btn-info btn-block mt-4">
+                    <input type="submit" id="submit-initials" class="btn btn-info btn-block my-4">
                 </div>
             </div> 
             <div class="row justify-content-center mt-5">

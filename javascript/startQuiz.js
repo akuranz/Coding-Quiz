@@ -214,14 +214,12 @@ function pushScores() {
     initials,
     score
   };
-  if (initials != "" && typeof intials === "string") {
+  if (initials != "") {
     highscores.push(newScores);
     localStorage.setItem("highscores", JSON.stringify(highscores));
     console.log(initials, score);
     window.location.href = "HighScores.html";
   } else {
-    alert(
-      "Enter your initials to log your score! Please do not enter any numbers."
-    );
+    alert("Enter your initials to log your score!");
   }
 }

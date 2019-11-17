@@ -1,3 +1,7 @@
+// var jsQuiz = document.querySelector("#js-quiz");
+// var htmlQuiz = document.querySelector("#html-quiz");
+// var cssQuiz = document.querySelector("#css-quiz");
+
 var startBtn = document.querySelector("#startQuiz");
 var startContainer = document.querySelector("#start-container");
 var questionContainer = document.querySelector("#question-container");
@@ -16,40 +20,6 @@ bell.src = "./assets/Ting-Popup_Pixels-349896185.mp3";
 var buzzer = new Audio();
 buzzer.src = "./assets/Buzzer-SoundBible.com-188422102.mp3";
 
-var questions = [
-  {
-    title: "Commonly used data types DO NOT include:",
-    choices: ["strings", "booleans", "alerts", "numbers"],
-    answer: "alerts"
-  },
-  {
-    title: "The condition in an if / else statement is enclosed within ____.",
-    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-    answer: "curly brackets"
-  },
-  {
-    title: "Arrays in javascript can be used to store ____.",
-    choices: [
-      "numbers and strings",
-      "other arrays",
-      "booleans",
-      "all of the above"
-    ],
-    answer: "all of the above"
-  },
-  {
-    title:
-      "String values must be enclosed with ____ when being assigned to variables.",
-    choices: ["commas", "curly brackets", "quotes", "parentheses"],
-    answer: "quotes"
-  },
-  {
-    title:
-      "A very useful tool used during development and debugging for printing content to the debugger is:",
-    choices: ["javascript", "terminal/bash", "for loops", "console log"],
-    answer: "console log"
-  }
-];
 let currentQuestionIndex = 0;
 let q = questions[currentQuestionIndex];
 let score = 0;
@@ -57,6 +27,27 @@ var timeLeft = 75;
 var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
 
 //EVENTS
+
+//Was able to load new script but couldn't get it to execute
+// htmlQuiz.addEventListener("click", function() {
+//   var js_script = document.createElement("script");
+//   js_script.setAttribute("type", "text/javascript");
+//   js_script.onload = function() {
+//     //at this tine the script is loaded
+//     console.log("Script loaded!");
+//     console.log(js_script);
+//   };
+//   js_script.setAttribute("src", "javascript/htmlQuestions.js");
+//   js_script.setAttribute("async", "true");
+//   document.getElementsByTagName("head")[0].appendChild(js_script);
+//   // document.body.insertBefore(js_script, document.body.childNodes[25]);
+// });
+// // $("html-quiz").on("click", function(event) {
+// // $.getScript("javascript/htmlQuestions.js", function() {
+// //   alert("Script loaded and executed.");
+// //   // here you can use anything you defined in the loaded script
+// // }
+// // });
 
 window.addEventListener("load", renderQuestion);
 

@@ -1,122 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Font Awesome Script -->
-    <script src="https://kit.fontawesome.com/c875ce7059.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/c875ce7059.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
     <!--CSS Stylesheet-->
-    <link rel="stylesheet" type="text/css" href="css/style.css" >
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-     <!--Title-->
-     <title>Coding Quiz</title>
+    <!--Title-->
+    <title>Coding Quiz</title>
   </head>
 
-
   <body>
-        <nav class="navbar navbar-light bg-white my-2 justify-content-lg-between justify-content-md-around justify-content-sm-around" role="navigation"> 
-            <a class="navbar-brand bg-teal my-2" href="highscores.html"><h1>View Highscores</h1></a>
-                <div class="row-fluid d-flex flex-row my-2">
-                    <div class="timer px-4" id="timer"><h3><i class="fas fa-hourglass-start"></i>|  Timer: 0</h3></div>
-                </div>
-        </nav>
-        <!-- <div class="container" id="topic-choice" style="display: block;">
-            <div class="dropdown">
-                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Choose Your Coding Topic
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" id="js-quiz" href="#">Javascript</a>
-                  <a class="dropdown-item" id="html-quiz" href="#">HTML</a>
-                  <a class="dropdown-item" id="css-quiz" href="#">CSS</a>
-                </div>
-              </div>
-        </div> -->
-        <div class="container" id="start-container" style="display: block;">
-            <div class = "row">
-                <div class = "col-md">
-                    <h2>Coding Quiz Challenge</h2>
-                </div>
-            </div>      
-            <div class = "row">
-                <div id="instructions" class = "col-md wrap-text m-4 py-3">
-                    <p>> Click "Start Your Quiz" to begin. You will have 75 seconds to answer five multiple choice quesitons about coding.<br/>
-                       > For each quesiton answered correctly, you will be awarded 10 points.<br/>> For each question answered incorrecly, 15 seconds will be subtracted from your remaining time. <br/>
-                       > You will also be rewarded one point for each remaining second, once the quiz is complete.<br/>> Enter your intials to log your final score on the highscores page. <br/>
-                    > Click "Go Back" to take the quiz again and improve your score!</p>
-                </div>
-            </div>
-            <div class = "row">
-                <div class = "col-md" id="firstQuestion">
-                    <input type="button" value="Start Your Quiz! >>" id="startQuiz" class="btn btn-info btn-lg">
-                </div>
-            </div>
+    <nav
+      class="navbar navbar-light bg-white my-2 justify-content-lg-between justify-content-md-around justify-content-sm-around"
+      role="navigation"
+    >
+      <a class="navbar-brand bg-teal my-2" href="highscores.html"
+        ><h1>View Highscores</h1></a
+      >
+      <div class="row-fluid d-flex flex-row my-2">
+        <div class="timer px-4" id="timer">
+          <h3><i class="fas fa-hourglass-start"></i>| Timer: 0</h3>
         </div>
-        <div class="container" id="question-container" style="display: none">
-            <div class = "row">
-                <div class = "col-md">
-                    <h2 id="question-title"></h2>
-            <div id="answers" class="btn-group-vertical">
-                <button id="0"></button>
-                <button id="1"></button>
-                <button id="2"></button>
-                <button id="3"></button>
-            </div>
-            <div id="evaluate-answer">
-            </div>
-                </div>
-            </div>      
+      </div>
+    </nav>
+    <div class="container" id="topic-choice" style="display: block;">
+      <div class="dropdown">
+        <button
+          class="btn btn-info dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Choose Your Coding Topic
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" id="js-quiz" href="#">Javascript</a>
+          <a class="dropdown-item" id="html-quiz" href="#">HTML</a>
+          <a class="dropdown-item" id="css-quiz" href="#">CSS</a>
         </div>
-        <div class="container" id="score-container" style="display: none">
-            <div class = "row">
-                <div class = "col-md">
-                    <h2>All done!</h2>
-                </div>
-            </div> 
-            <div class = "row justify-content-center mb-5">
-                <div class = "col-md" id="final-score">
-                </div>
-            </div> 
-            <div class = "row" id="submit-highscores" class="py-3">
-                <div class = "col-md">
-                    <h3 id="submissionLabel" class="my-4">Enter initials:</h3>
-                </div>
-                <div class = "col-md">
-                    <input type="text" placeholder="Enter Initials Here" style="text-transform: uppercase" class="my-4" id="enter-initials">
-                </div>
-                <div class = "col-md">
-                    <input type="submit" id="submit-initials" class="btn btn-info btn-block my-4">
-                </div>
-            </div> 
-            <div class="row justify-content-center mt-5">
-                <div id="evaluate-answer-final">
-                    </div>
-            </div>
-            
+      </div>
+    </div>
+    <div class="container" id="start-container" style="display: block;">
+      <div class="row">
+        <div class="col-md">
+          <h2>Coding Quiz Challenge</h2>
         </div>
+      </div>
+      <div class="row">
+        <div id="instructions" class="col-md wrap-text m-4 py-3">
+          <p>
+            > Click "Start Your Quiz" to begin. You will have 75 seconds to
+            answer five multiple choice quesitons about coding.<br />
+            > For each quesiton answered correctly, you will be awarded 10
+            points.<br />> For each question answered incorrecly, 15 seconds
+            will be subtracted from your remaining time. <br />
+            > You will also be rewarded one point for each remaining second,
+            once the quiz is complete.<br />> Enter your intials to log your
+            final score on the highscores page. <br />
+            > Click "Go Back" to take the quiz again and improve your score!
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md" id="firstQuestion">
+          <input
+            type="button"
+            value="Start Your Quiz! >>"
+            id="startQuiz"
+            class="btn btn-info btn-lg"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container" id="question-container" style="display: none">
+      <div class="row">
+        <div class="col-md">
+          <h2 id="question-title"></h2>
+          <div id="answers" class="btn-group-vertical">
+            <button id="0"></button>
+            <button id="1"></button>
+            <button id="2"></button>
+            <button id="3"></button>
+          </div>
+          <div id="evaluate-answer"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="score-container" style="display: none">
+      <div class="row">
+        <div class="col-md">
+          <h2>All done!</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center mb-5">
+        <div class="col-md" id="final-score"></div>
+      </div>
+      <div class="row" id="submit-highscores" class="py-3">
+        <div class="col-md">
+          <h3 id="submissionLabel" class="my-4">Enter initials:</h3>
+        </div>
+        <div class="col-md">
+          <input
+            type="text"
+            placeholder="Enter Initials Here"
+            style="text-transform: uppercase"
+            class="my-4"
+            id="enter-initials"
+          />
+        </div>
+        <div class="col-md">
+          <input
+            type="submit"
+            id="submit-initials"
+            class="btn btn-info btn-block my-4"
+          />
+        </div>
+      </div>
+      <div class="row justify-content-center mt-5">
+        <div id="evaluate-answer-final"></div>
+      </div>
+    </div>
 
-         <!--Footer Content-->
-         <footer class="footer mt-5">
-                <div class="container text-center">
-                    <span class="text-muted">Copyright &copy;</span>
-                </div>
-            </footer>
-    
-            
-            
-            <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="javascript/codingQuestions.js"></script>
-        <script type="text/javascript" src="javascript/startQuiz.js"></script>
+    <!--Footer Content-->
+    <footer class="footer mt-5">
+      <div class="container text-center">
+        <span class="text-muted">Copyright &copy;</span>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="javascript/codingQuestions.js"></script>
+    <script type="text/javascript" src="javascript/startQuiz.js"></script>
   </body>
 </html>

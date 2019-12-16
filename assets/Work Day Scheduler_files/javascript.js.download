@@ -1,0 +1,158 @@
+$(document).ready(function() {
+  var businessHours = [
+    "9AM",
+    "10AM",
+    "11AM",
+    "12PM",
+    "1PM",
+    "2PM",
+    "3PM",
+    "4PM",
+    "5PM"
+  ];
+
+  //calls moment and the current date for top of calendar
+  const date = moment();
+  console.log(moment());
+  $("#currentDay").html(moment().format("LL"));
+  $("#currentime").html(moment().format("LT"));
+
+  //loop through businessHours array to append new rows for each hour
+  for (var i = 0; i < businessHours.length; i++) {
+    var time = businessHours[i];
+    $("#timeblock-table tbody").append(
+      "<tr class='hour parent-row'><tr><td class=" +
+        `${time}` +
+        ">" +
+        time +
+        "</td><td><textarea class='description'></textarea></td><td class='saveBtn' " +
+        `id=${time}` +
+        "'>" +
+        "<i></i></td></tr></tr>"
+    );
+    $("i").attr("class", "fas fa-save pt-3");
+    // $("textarea").attr("id", time);
+    // addClass("class", "" + businessHours[i] + "");
+    // $.each(businessHours, function(index, value) {
+    //   $("textarea").attr("id", value);
+    //   console.log(value);
+    // });
+  }
+  // $(businessHours).each(function(index) {
+  //   $("textarea").attr("id", index[0]);
+  // });
+
+  var appointment = localStorage.getItem("appointment");
+  $("#newInfo").text(appointment);
+
+  $(".saveBtn").on("click", function() {
+    console.log("hello!");
+    event.preventDefault();
+    var appointmentInput = $("#newInfo").val();
+    localStorage.setItem("appointment", appointmentInput);
+  });
+
+  //Tried adding value to local storage with .this
+  // $("#text").on("click", function() {
+  //   $("#newInfo").each(function() {
+  //     var id = $(this).attr("id");
+  //     var value = $(this).val();
+  //     localStorage.setItem(id, value);
+  //   });
+  // });
+
+  // $("#test-parent").on("click", function() {
+  //   $(".description").each(function() {
+  //     var id = $(this).attr("id");
+  //     var value = localStorage.getItem(id);
+
+  //     $(this).val(value);
+  //   });
+  // });
+
+  // var appointment = localStorage.getItem("appointment");
+  // $("#8AM").text(appointment);
+
+  // $(".saveBtn").on("click", function() {
+  //   console.log("hello!");
+  //   console.log(event.target.previousSibling);
+  //   event.preventDefault();
+  //   var appointmentInput = $("#8AM").val();
+  //   localStorage.setItem("appointment", appointmentInput);
+  // });
+
+  // var appointment = localStorage.getItem("appointment");
+  // $(event.target.previousSibling).text(appointment);
+  // $(".saveBtn").on("click", function() {
+  //   console.log("hello!");
+  //   console.log(event.target.parentElement.children);
+  //   console.log(event.target.previousSibling);
+  //   event.preventDefault();
+  //   var appointmentInput = $(event.target.previousSibling).val();
+  //   localStorage.setItem("appointment", appointmentInput);
+  // });
+
+  // var appointment = localStorage.getItem("appointment");
+  // $("#newInfo").text(appointment);
+
+  // $(".saveBtn").on("click", function() {
+  //   console.log("hello!");
+  //   event.preventDefault();
+  //   var appointmentInput = $("#newInfo").val();
+  //   localStorage.setItem("appointment", appointmentInput);
+  // });
+});
+
+//   for (var i = 0; i < businessHours.length; i++) {
+//     $("#timeblock-table tbody").append(
+//       '<tr scope="row" class="row"><td>' + businessHours[i] + "</td></tr>"
+//     );
+//   }
+
+//   $("#timeblock-table tr").append("<td><textarea></textarea></td>");
+
+//   $("#timeblock-table tr").append("<td ><i class=''></i></td>");
+//   $("i").attr("class", "fas fa-save saveBtn pt-3");
+
+//   for (var i = 0; i < businessHours.length; i++) {
+//     $("#timeblock-table tbody")
+//       .find("tr")
+//       .each(function() {
+//         $(this)
+//           .find("td")
+//           .eq(0)
+//           .after("<td>hello</td>");
+//       });
+//   }
+
+//   for (var i = 0; i < businessHours.length; i++) {
+//     $("#timeblock-table tbody").append(
+//       "<tr><td><textarea>hello</textarea></td></tr>"
+//     );
+//   }
+
+//   for (var i = 0; i < businessHours.length; i++) {
+//     $("#timeblock-table tbody").append(
+//       '<tr><td class="saveBtn"><i></i></td></tr>'
+//     );
+//     $("i").attr("class", "fas fa-save pt-3");
+//   }
+
+// //color coding past, present, future events
+// var time = "11:30 pm"; //doesn't recognize AM/PM right now
+// console.log(time);
+// var now = moment().format("hh:mm a");
+// console.log(now);
+
+// var future = moment("hh:mm a").isAfter("11:30 pm");
+// console.log(future);
+
+// if (now > time) {
+//   console.log("date is past");
+// } else {
+//   console.log("date is future");
+// }
+
+// var future = moment("9:00 PM").isSameOrAfter("9:00 AM", "h:mm A");
+
+// console.log(future);

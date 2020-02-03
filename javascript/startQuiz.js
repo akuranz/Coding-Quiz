@@ -29,25 +29,25 @@ var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
 //EVENTS
 
 //Was able to load new script but couldn't get it to execute
-htmlQuiz.addEventListener("click", function() {
-  var js_script = document.createElement("script");
-  js_script.setAttribute("type", "text/javascript");
-  js_script.onload = function() {
-    //at this tine the script is loaded
-    console.log("Script loaded!");
-    console.log(js_script);
-  };
-  js_script.setAttribute("src", "javascript/htmlQuestions.js");
-  js_script.setAttribute("async", "true");
-  document.getElementsByTagName("head")[0].appendChild(js_script);
-  // document.body.insertBefore(js_script, document.body.childNodes[25]);
-});
-$("html-quiz").on("click", function(event) {
-$.getScript("javascript/htmlQuestions.js", function() {
-  alert("Script loaded and executed.");
-  // here you can use anything you defined in the loaded script
-}
-});
+// htmlQuiz.addEventListener("click", function() {
+//   var js_script = document.createElement("script");
+//   js_script.setAttribute("type", "text/javascript");
+//   js_script.onload = function() {
+//     //at this tine the script is loaded
+//     console.log("Script loaded!");
+//     console.log(js_script);
+//   };
+//   js_script.setAttribute("src", "javascript/htmlQuestions.js");
+//   js_script.setAttribute("async", "true");
+//   document.getElementsByTagName("head")[0].appendChild(js_script);
+//   // document.body.insertBefore(js_script, document.body.childNodes[25]);
+// });
+// $("html-quiz").on("click", function(event) {
+//   $.getScript("javascript/htmlQuestions.js", function() {
+//     alert("Script loaded and executed.");
+//     // here you can use anything you defined in the loaded script
+//   });
+// });
 
 window.addEventListener("load", renderQuestion);
 
